@@ -89,4 +89,8 @@ terraform apply
 
 - デプロイが完了したら表示されるそれぞれのURLにアクセスしてください
   - google_cloud_run_backend_url = "https://xxxxxx.a.run.app"
+    - デフォルト状態であれば、`/`にアクセスすることで、`Hello, World! Your access ID is 9c4515b3-c8ce-474e-b320-6c8013214b55` といった文字列が表示されます
+    - `/list`にアクセスすることで、それまでのアクセス一覧が表示されます
+      - GCS+SQLiteを利用することで、Cloud RunでもRDBによる永続化を低コストで行うことができます
+      - ただし、Cloud Runの同時実行数は1に制限されるため、商用環境ではCloud SQLなどを利用することをお勧めします
   - google_cloud_run_frontend_url = "https://yyyyyy.a.run.app"
